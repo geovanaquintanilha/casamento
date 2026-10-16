@@ -76,7 +76,7 @@ dialog::backdrop{background:rgba(10,30,29,.6)}
       <g class="boia"><path d="M16 164a14 14 0 0 1 28 0z" fill="#e5392b"/><path d="M16 164a14 14 0 0 0 28 0z" fill="#fff"/></g>
       <path d="M0 170q15-8 30 0t30 0" stroke="#5aa79b" stroke-width="3" fill="none"/>
     </svg>
-    <p class="topo">Vamos nos casar</p>
+    <p class="topo">Vamos nos casar!</p>
     <h1><span>Geovana</span><span>&amp; Vitor</span></h1>
     <p class="sub">A data ainda não saiu, mas a lista de presentes já está no ar.</p>
     <a href="#presentes">Ver lista de presentes</a>
@@ -106,7 +106,7 @@ dialog::backdrop{background:rgba(10,30,29,.6)}
     <p id="dv"></p>
     <div id="qr"></div>
     <button class="b pix" id="cp" type="button">Copiar código Pix</button>
-    <p class="obrig">Muito obrigados pelo carinho! 💙<br>Pague no app do seu banco e o presente chega direto para nós. Não precisa enviar comprovante.</p>
+    <p class="obrig">Agradecemos pelo carinho! 💙<br>Pague no app do seu banco e o presente chega direto para nós. Não precisa enviar comprovante.</p>
     <button class="b cartao" id="fc" type="button">Fechar</button>
   </div>
 </dialog>
@@ -123,19 +123,21 @@ const CONFIG={
 /* t = título | f = frase (opcional) | v = valor em reais
    c = link de pagamento do cartão (InfinitePay) | n = quantas pessoas já escolheram */
 const GRUPOS=[
- {titulo:"Lista de presentes",texto:"Aqui o presente é de brincadeira e o carinho é de verdade. Escolha um item, pague por Pix ou cartão e pronto: sem cadastro.",itens:[
-  {t:"Vara de pesca profissional para marido teimoso",f:"Para o noivo continuar dizendo que o peixe escapou porque a vara não era boa o suficiente.",v:150,c:"",n:0},
+ {titulo:"Lista de presentes",texto:"Aqui o presente é de brincadeira e o carinho é de verdade. Escolha um item, pague por Pix ou Cartão de Crédito de forma simplificada. É mais fácil que comprar na Shopee!",itens:[
+  {t:"Vara de pesca profissional para marido",f:"Para o noivo continuar dizendo que o peixe escapou porque a vara não era boa o suficiente.",v:150,c:"",n:0},
   {t:"Tambaqui de estimação com pedigree",f:"Um peixe tão caro que já entra na família como herdeiro dos bens do casal.",v:100,c:"",n:0},
-  {t:"Notebook gamer para a esposa não mexer no computador do marido",v:250,c:"",n:0},
-  {t:"Ferrari para o noivo ir comprar pão",v:500,c:"",n:0},
-  {t:"Lancha para a lua de mel no meio do lago",v:300,c:"",n:0},
-  {t:"Robô que limpa a casa e ainda lava a louça",v:200,c:"",n:0},
-  {t:"Oficina mecânica particular do marido",v:180,c:"",n:0},
-  {t:"Cama king size para dormir de costas um para o outro",v:350,c:"",n:0},
-  {t:"Fundo de emergência para pescarias",v:200,c:"",n:0},
+  {t:"Notebook gamer para a esposa não jogar no Play Station do noivo", f:"Para trabalhar, estudar e fazer compras.",v:250,c:"",n:0},
+  {t:"Ferrari para o noivo ir comprar pão",f:"Porque o amor é lindo, mas chegar à padaria a 300 km/h é o sonho dele. ,"v:500,c:"",n:0},
+  {t:"Taxa para tiar foto com nosso peixe de 30kg e dizer que foi você",f:"Um tambaqui verde de 30kg é raridade, vale o investimento!",v:350,c:"",n:0},
+  {t:"Lancha para a lua de mel no meio do lago",f: "Hotel, praia e resort são legais, mas já imaginou passar a lua de mel pescando de madrugada?",v:300,c:"",n:0},
+  {t:"Robô que limpa a casa e ainda lava a louça",f: "Até porque enquanto a gente pesca, alguém tem que cuidar da casa", v:200,c:"",n:0},
+  {t:"Oficina mecânica particular do marido",f: "Para o noivo consertar o carro",v:180,c:"",n:0},
+  {t:"Cama king size para dormir com os cachorros",f: "Até porque o cachorro não vai dormir no quintal"v:350,c:"",n:0},
+  {t:"Taxa para tirarem foto com os nossos peixes e dizer que foi você",f:"Quem nunca, né?",v:190,c:"",n:0},
+  {t:"Fundo de emergência para pescarias",f:"Porque a vida adulta não perdoa e o mecânico não aceita peixe como forma de pagamento.",v:200,c:"",n:0},
   {t:"Taxa de autorização para ir pescar",v:65,c:"",n:0}
  ]},
- {titulo:"Presentes especiais para padrinhos e familiares",itens:[
+ {titulo:"Presentes especiais para nos surpreender",itens:[
   {t:"Enxoval de pesca dos recém-casados",v:250,c:"",n:0},
   {t:"Fundo de emergência para o peixe que levou a vara embora",v:500,c:"",n:0},
   {t:"Cota de investimento na lancha dos nossos sonhos",v:1000,c:"",n:0},
