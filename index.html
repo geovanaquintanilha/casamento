@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Geovana e Vitor</title>
+<meta name="description" content="Site do casamento de Geovana e Vitor: informações do dia e lista de presentes.">
+<meta name="theme-color" content="#0f3b3a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--lago:#0f3b3a;--lago2:#1b5e57;--neblina:#eaf2ee;--escama:#d9a441;--txt:#18302f;--suave:#587270;--linha:#cfe0d9}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--neblina);color:var(--txt);font:400 1.0625rem/1.6 Figtree,system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",Figtree,system-ui,sans-serif;margin:0;line-height:1.1}
+:focus-visible{outline:3px solid var(--escama);outline-offset:2px}
+
+.hero{background:var(--lago);color:#fff;padding:56px 24px 72px;overflow:hidden}
+.hero-in{max-width:1040px;margin:auto;position:relative}
+.hero h1{font-size:clamp(3.2rem,14vw,7.5rem);font-weight:800;letter-spacing:-.03em}
+.hero h1 span{display:block}
+.hero .topo{margin:0 0 18px;color:#b9d6cf}
+.hero .sub{margin:26px 0 24px;max-width:32ch;font-size:1.2rem;color:#d7e9e4}
+.hero a{display:inline-block;background:var(--escama);color:var(--lago);font-weight:700;text-decoration:none;padding:13px 22px;border-radius:10px}
+.linha{position:absolute;right:4px;top:-56px;width:56px;height:auto}
+.boia{transform-origin:30px 150px;animation:bal 4s ease-in-out infinite}
+@keyframes bal{50%{transform:rotate(3deg)}}
+@media (prefers-reduced-motion:reduce){.boia{animation:none}html{scroll-behavior:auto}}
+
+main{max-width:1040px;margin:auto;padding:0 20px}
+.bloco{padding:56px 0 8px}
+.bloco h2{font-size:clamp(1.8rem,5vw,2.6rem);font-weight:800;letter-spacing:-.02em;color:var(--lago)}
+.intro{max-width:60ch;margin:12px 0 0;color:var(--suave)}
+
+dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0 28px;margin:26px 0 0}
+dl div{border-top:2px solid var(--lago);padding:12px 0 18px}
+dt{font:800 1.2rem "Bricolage Grotesque",sans-serif;color:var(--lago)}
+dd{margin:4px 0 0;color:var(--suave)}
+
+.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px;margin-top:26px}
+.item{position:relative;display:flex;flex-direction:column;gap:8px;background:#fff;border:1.5px solid var(--linha);border-radius:14px;padding:26px 20px 18px}
+.item::before{content:"";position:absolute;top:11px;right:14px;width:12px;height:12px;border-radius:50%;background:var(--neblina);border:1.5px solid var(--linha)}
+.item h3{font-size:1.2rem;font-weight:600;padding-right:18px}
+.frase{margin:0;color:var(--suave);font-size:.98rem}
+.preco{margin:auto 0 0;padding-top:6px;font:800 1.7rem "Bricolage Grotesque",sans-serif;color:var(--lago)}
+.aviso{margin:0;font-size:.9rem;color:var(--lago2);background:#e2efe9;border-radius:8px;padding:6px 10px}
+.acoes{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+.b{flex:1 1 130px;min-height:46px;display:inline-flex;align-items:center;justify-content:center;padding:8px 12px;border-radius:10px;border:2px solid var(--lago);font:700 .95rem Figtree,sans-serif;text-decoration:none;cursor:pointer}
+.pix{background:var(--lago);color:#fff}
+.cartao{background:#fff;color:var(--lago)}
+.off{opacity:.45;pointer-events:none}
+
+footer{margin-top:64px;padding:32px 20px 40px;text-align:center;background:var(--lago);color:#b9d6cf}
+
+dialog{border:0;border-radius:18px;padding:0;width:min(380px,calc(100% - 28px));color:var(--txt);text-align:center}
+dialog::backdrop{background:rgba(10,30,29,.6)}
+.dc{padding:26px 22px}
+.dc h3{font-size:1.25rem}
+#dv{margin:6px 0 0;font:800 1.6rem "Bricolage Grotesque",sans-serif;color:var(--lago)}
+#qr{display:flex;justify-content:center;margin:16px 0}
+#qr img,#qr canvas{max-width:100%;height:auto}
+.obrig{margin:16px 0;padding:12px;border-radius:10px;background:#e2efe9;font-size:.95rem}
+.dc .b{width:100%;margin-top:8px}
+.toast{position:fixed;left:50%;bottom:20px;width:min(420px,calc(100% - 32px));transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--lago);color:#fff;padding:14px 16px;border-radius:12px;text-align:center;transition:opacity .25s,transform .25s}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-in">
+    <svg class="linha" viewBox="0 0 60 200" aria-hidden="true">
+      <path d="M30 0V150" stroke="#b9d6cf" stroke-width="2" fill="none"/>
+      <g class="boia"><path d="M16 164a14 14 0 0 1 28 0z" fill="#e5392b"/><path d="M16 164a14 14 0 0 0 28 0z" fill="#fff"/></g>
+      <path d="M0 170q15-8 30 0t30 0" stroke="#5aa79b" stroke-width="3" fill="none"/>
+    </svg>
+    <p class="topo">Vamos nos casar</p>
+    <h1><span>Geovana</span><span>&amp; Vitor</span></h1>
+    <p class="sub">A data ainda não saiu, mas a lista de presentes já está no ar.</p>
+    <a href="#presentes">Ver lista de presentes</a>
+  </div>
+</header>
+
+<main>
+  <section class="bloco" id="dia">
+    <h2>O grande dia</h2>
+    <p class="intro">Assim que tivermos data, local e dress code, atualizamos esta página.</p>
+    <dl>
+      <div><dt>Data</dt><dd>A definir</dd></div>
+      <div><dt>Local</dt><dd>A definir</dd></div>
+      <div><dt>Dress code</dt><dd>A definir</dd></div>
+    </dl>
+  </section>
+
+  <div id="presentes"></div>
+  <div id="lista"></div>
+</main>
+
+<footer>Com carinho, Geovana e Vitor</footer>
+
+<dialog id="dlg">
+  <div class="dc">
+    <h3 id="dt"></h3>
+    <p id="dv"></p>
+    <div id="qr"></div>
+    <button class="b pix" id="cp" type="button">Copiar código Pix</button>
+    <p class="obrig">Muito obrigados pelo carinho! 💙<br>Pague no app do seu banco e o presente chega direto para nós. Não precisa enviar comprovante.</p>
+    <button class="b cartao" id="fc" type="button">Fechar</button>
+  </div>
+</dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+/* ===== CONFIGURAÇÃO (é só aqui que você mexe) ===== */
+const CONFIG={
+  chavePix:"db480b41-dbd9-48c9-bac1-4f5d97b293c4",
+  nomeRecebedor:"Geovana", // nome da sua conta, até 25 letras
+  cidade:"Brasil"          // até 15 letras
+};
+/* t = título | f = frase (opcional) | v = valor em reais
+   c = link de pagamento do cartão (InfinitePay) | n = quantas pessoas já escolheram */
+const GRUPOS=[
+ {titulo:"Lista de presentes",texto:"Aqui o presente é de brincadeira e o carinho é de verdade. Escolha um item, pague por Pix ou cartão e pronto: sem cadastro.",itens:[
+  {t:"Vara de pesca profissional para marido teimoso",f:"Para o noivo continuar dizendo que o peixe escapou porque a vara não era boa o suficiente.",v:150,c:"",n:0},
+  {t:"Tambaqui de estimação com pedigree",f:"Um peixe tão caro que já entra na família como herdeiro dos bens do casal.",v:100,c:"",n:0},
+  {t:"Notebook gamer para a esposa não mexer no computador do marido",v:250,c:"",n:0},
+  {t:"Ferrari para o noivo ir comprar pão",v:500,c:"",n:0},
+  {t:"Lancha para a lua de mel no meio do lago",v:300,c:"",n:0},
+  {t:"Robô que limpa a casa e ainda lava a louça",v:200,c:"",n:0},
+  {t:"Oficina mecânica particular do marido",v:180,c:"",n:0},
+  {t:"Cama king size para dormir de costas um para o outro",v:350,c:"",n:0},
+  {t:"Fundo de emergência para pescarias",v:200,c:"",n:0},
+  {t:"Taxa de autorização para ir pescar",v:65,c:"",n:0}
+ ]},
+ {titulo:"Presentes especiais para padrinhos e familiares",itens:[
+  {t:"Enxoval de pesca dos recém-casados",v:250,c:"",n:0},
+  {t:"Fundo de emergência para o peixe que levou a vara embora",v:500,c:"",n:0},
+  {t:"Cota de investimento na lancha dos nossos sonhos",v:1000,c:"",n:0},
+  {t:"Ampliação da casa para guardar tralhas de pesca",v:400,c:"",n:0}
+ ]}
+];
+/* ===== FIM DA CONFIGURAÇÃO ===== */
+
+const BRL=v=>v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+const tlv=(id,v)=>id+String(v.length).padStart(2,"0")+v;
+function crc(s){let c=0xFFFF;for(let i=0;i<s.length;i++){c^=s.charCodeAt(i)<<8;for(let j=0;j<8;j++){c=(c&0x8000)?((c<<1)^0x1021):(c<<1);c&=0xFFFF}}return c.toString(16).toUpperCase().padStart(4,"0")}
+function pix(valor){
+  const sem=s=>s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toUpperCase();
+  const p=tlv("00","01")+tlv("01","11")
+    +tlv("26",tlv("00","br.gov.bcb.pix")+tlv("01",CONFIG.chavePix))
+    +tlv("52","0000")+tlv("53","986")+tlv("54",valor.toFixed(2))+tlv("58","BR")
+    +tlv("59",sem(CONFIG.nomeRecebedor).slice(0,25))+tlv("60",sem(CONFIG.cidade).slice(0,15))
+    +tlv("62",tlv("05","***"))+"6304";
+  return p+crc(p);
+}
+
+const TODOS=[],lista=document.getElementById("lista");
+GRUPOS.forEach(g=>{
+  const sec=document.createElement("section");sec.className="bloco";
+  sec.innerHTML=`<h2>${g.titulo}</h2>${g.texto?`<p class="intro">${g.texto}</p>`:""}<div class="grade"></div>`;
+  const grade=sec.querySelector(".grade");
+  g.itens.forEach(it=>{
+    const i=TODOS.push(it)-1,n=it.n||0,el=document.createElement("article");
+    el.className="item";
+    el.innerHTML=`<h3>${it.t}</h3>${it.f?`<p class="frase">${it.f}</p>`:""}<p class="preco">${BRL(it.v)}</p>`
+      +(n?`<p class="aviso">${n===1?"1 pessoa já escolheu este":n+" pessoas já escolheram este"}</p>`:"")
+      +`<div class="acoes"><button class="b pix" type="button" data-i="${i}">Pagar com Pix</button>`
+      +(it.c?`<a class="b cartao" href="${it.c}" target="_blank" rel="noopener" data-ty="1">Pagar no cartão</a>`:`<span class="b cartao off">Cartão em breve</span>`)
+      +`</div>`;
+    grade.appendChild(el);
+  });
+  lista.appendChild(sec);
+});
+
+const dlg=document.getElementById("dlg"),qr=document.getElementById("qr"),cp=document.getElementById("cp"),tt=document.getElementById("toast");
+let codigo="",tm;
+lista.addEventListener("click",e=>{
+  const b=e.target.closest(".pix");
+  if(b){
+    const it=TODOS[b.dataset.i];codigo=pix(it.v);
+    document.getElementById("dt").textContent=it.t;
+    document.getElementById("dv").textContent=BRL(it.v);
+    qr.innerHTML="";
+    try{new QRCode(qr,{text:codigo,width:210,height:210,correctLevel:QRCode.CorrectLevel.M})}catch(err){}
+    cp.textContent="Copiar código Pix";
+    dlg.showModal();return;
+  }
+  if(e.target.closest("[data-ty]")){
+    tt.textContent="Muito obrigados pelo carinho! 💙 Conclua o pagamento na página que abriu.";
+    tt.classList.add("on");clearTimeout(tm);tm=setTimeout(()=>tt.classList.remove("on"),6000);
+  }
+});
+cp.onclick=async()=>{
+  try{await navigator.clipboard.writeText(codigo)}
+  catch(e){const t=document.createElement("textarea");t.value=codigo;document.body.appendChild(t);t.select();document.execCommand("copy");t.remove()}
+  cp.textContent="Código copiado!";
+};
+document.getElementById("fc").onclick=()=>dlg.close();
+dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
+</script>
+</body>
+</html>
